@@ -18,7 +18,16 @@
  * @return O resultado da multiplicação de X e Y.
  */
 int multiplicacao(int X, int Y) {
-    return -1;
+    if (Y == 0){
+        return 0;
+    }
+    if (Y > 0){
+        return X + (multiplicacao(X, Y - 1));
+    }
+    if (Y < 0){
+        return -(multiplicacao(X, -Y));
+    }
+    return 0;
 }
 
 TEST_CASE("Multiplicar Dois Números Inteiros - Testes") {
