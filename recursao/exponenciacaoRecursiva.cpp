@@ -18,7 +18,14 @@
  * @return O resultado de X^Y.
  */
 int exponenciacao(int X, int Y) {
-    return -1;
+    if (Y == 0){
+        return 1;
+    }
+    if (Y == 1){
+        return X;
+    }
+
+    return X * exponenciacao (X, Y - 1);
 }
 
 TEST_CASE("Exponenciação de Dois Números Inteiros - Testes") {
